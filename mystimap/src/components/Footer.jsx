@@ -63,10 +63,7 @@ function Footer() {
       <section class='social-media'>
         <div class='social-media-wrap'>
           <div class='footer-logo'>
-            <Link to='/' className='social-logo'>
-              TRVL
-              <i class='fab fa-typo3' />
-            </Link>
+           
           </div>
           <small class='website-rights'>MYSTIMAP © 2025</small>
           <div class='social-icons'>

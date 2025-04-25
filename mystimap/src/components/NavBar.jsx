@@ -33,7 +33,7 @@ function NavBar() {
             <nav className="navbar">
                 <div className="nav-container">
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        MyMistiMap
+                        MystiMap
                         <i className='fab fa-typo3' />
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>

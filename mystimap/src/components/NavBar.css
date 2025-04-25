@@ -10,7 +10,7 @@
     z-index: 999;
   }
   
-  .navbar-container {
+  .nav-container {
     display: flex;
     justify-content: center;
     align-items: center;
