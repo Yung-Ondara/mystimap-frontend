@@ -43,9 +43,9 @@ function Cards(){
               path='/sign-up'
             />
              <CardItem
-              src='images/img-3.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-              label='Mystery'
+              src='/images/img-10.jpg'
+              text='"Trek through majestic trails and conquer nature’s peaks, one step at a time.'
+              label='Nature'
               path='/services'
             />
           </ul>
