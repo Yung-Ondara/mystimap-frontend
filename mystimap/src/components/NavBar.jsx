@@ -26,6 +26,14 @@ function NavBar(){
     
     return (
         <>
+        <nav className="navbar">
+            <div className="nav-container">
+            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+            MyMistiMap
+                <i class='fab fa-typo3' />
+                    </Link>
+            </div>
+        </nav>
         </>
     )
 }
