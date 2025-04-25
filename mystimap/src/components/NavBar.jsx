@@ -16,7 +16,12 @@ function NavBar(){
             setButton(true);
 
             }
-        }
+        };
+        useEffect(() => {
+            showButton();
+        }, []);
+
+        window.addEventListener('resize', showButton);
     }
     
     return (
