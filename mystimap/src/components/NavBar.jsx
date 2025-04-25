@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react"
 import "./NavBar.css";
+import Button from './Button';
 
 
 function NavBar(){
@@ -41,9 +42,35 @@ function NavBar(){
                 Home
               </Link>
             </li>
+            <li className="nav-items">
+                <Link
+                to='/services'
+                className='nav-links'
+                onClick={closeMobileMenu}>
+                    Services
+                </Link>
+            </li>
+            <li className="nav-item">
+                <Link
+                to='/products'
+                className='nav-links'
+                onClick={closeMobileMenu}>
+                    products
+                </Link>
+            </li>
+            <li>
+                <Link
+                to='/sign-up'
+                className='nav-links-mobile'
+                onClick={closeMobileMenu}>
+                    sign Up
+                </Link>
+            </li>
             </ul>
+            {button && <button  buttonStyle='btn--outline'>SIGN UP</Button>}
             </div>
         </nav>
         </>
-    )
+    );
 }
+export default NavBar;
