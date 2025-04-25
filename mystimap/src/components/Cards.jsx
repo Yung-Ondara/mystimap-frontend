@@ -1,58 +1,48 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Cards.css";
 import CardItem from './CardItem';
 
-function Cards(){
-    return(
-        < div className='cards'>
-            <h1>Check Out This EPIC Destinations!</h1>
-        < div className='cards__container'>
-        < div className='cards__wrapper'>
-        <ul className='cards__items'>
-        <CardItem
-              src='images/img-9.jpg'
-              text='Explore the hidden waterfall deep inside the Amazon Jungle'
-              label='Adventure'
-              path='/services'
-            />
-            <CardItem
-              src='images/img-2.jpg'
-              text='Travel through the Islands of Bali in a Private Cruise'
-              label='Luxury'
-              path='/services'
-            />
-             <CardItem
-              src='images/img-3.jpg'
-              text='Set Sail in the Atlantic Ocean visiting Uncharted Waters'
-              label='Mystery'
-              path='/services'
-            />
+function Cards() {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/cards") // Make sure json-server is running
+      .then(res => res.json())
+      .then(data => setCards(data))
+      .catch(err => console.error("Error fetching cards:", err));
+  }, []);
+
+  return (
+    <div className='cards'>
+      <h1>Check Out These EPIC Destinations!</h1>
+      <div className='cards_container'>
+        <div className='cards_wrapper'>
+          <ul className='cards_items'>
+            {cards.slice(0, 2).map((card, index) => (
+              <CardItem
+                key={index}
+                src={card.src}
+                text={card.text}
+                label={card.label}
+                path={card.path}
+              />
+            ))}
           </ul>
           <ul className='cards__items'>
-           
-            <CardItem
-              src='images/img-4.jpg'
-              text='Experience Football on Top of the Himilayan Mountains'
-              label='Adventure'
-              path='/products'
-            />
-            <CardItem
-              src='images/img-8.jpg'
-              text='Ride through the Sahara Desert on a guided camel tour'
-              label='Adrenaline'
-              path='/sign-up'
-            />
-             <CardItem
-              src='/images/img-10.jpg'
-              text='"Trek through majestic trails and conquer nature’s peaks, one step at a time.'
-              label='Nature'
-              path='/services'
-            />
+            {cards.slice(2).map((card, index) => (
+              <CardItem
+                key={index + 2} // avoid duplicate keys
+                src={card.src}
+                text={card.text}
+                label={card.label}
+                path={card.path}
+              />
+            ))}
           </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
 
-        </div>
-        </div>
-        </div>
-        )
-    }
-    export default Cards;
+export default Cards;
